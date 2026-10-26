@@ -25,8 +25,10 @@ plt.xlabel("log10(sd_energy)")
 plt.ylabel("events")
 plt.show()
 print(ex["sd_exposure"].iloc[-1], ex["sd_exposure_all"].iloc[-1])
-E = ev["sd_energy"].dropna().values
-Emin = 3.0                     
+Emin = 2.5   # EeV, from the Auger notebook
+sel = ev["sd_energy"].notna() & (ev["sd_energy"] >= Emin) & (ev["sd_theta"] < 60)
+E = ev.loc[sel, "sd_energy"].values
+print("events used:", len(E))                   
 E = E[E >= Emin]
 exposure = ex["sd_exposure"].iloc[-1] 
 edges = 10**np.arange(np.log10(Emin), 2.25, 0.1)   
@@ -62,3 +64,4 @@ plt.ylabel("E³ J [EeV² km⁻² sr⁻¹ yr⁻¹]")
 (BASE / "figures").mkdir(exist_ok=True)
 plt.savefig(BASE / "figures" / "spectrum_E3J.png", dpi=200, bbox_inches="tight")
 plt.show()
+print(ev["sd_theta"].describe())
