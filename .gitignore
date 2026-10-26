@@ -179,3 +179,10 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
+data/*.zip
+data/*.crdownload
+.Rhistory
+data/Figure.spectrum 2026-10-24 180353 (2).png
+data/Figure.spectrum 2026-10-24 180353 (3).png
+figures/Figure.spectrum 2026-10-24 180353 (2).png
+data/Figure.spectrum 2026-10-24 180357.png
