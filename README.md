@@ -31,20 +31,21 @@ the zip files in `data/`.
 4. Plot $E^3 J$ against $E$.
 5. Fit power laws to $5$–$40\ \mathrm{EeV}$ and $40$–$150\ \mathrm{EeV}$ with `scipy.optimize.curve_fit`.
 
-The event counts in the first bins (8325, 4660, 2890, 1795, 1222) reproduce
-those in Auger's example notebook.
+The event counts in the first bins (8325, 4661, 2891, 1798, 1223) agree with
+those in Auger's example notebook to within a few events.
 
 ## Results
 ![Energy spectrum, E^3 J versus E](figures/spectrum_E3J.png)
 
 Plotted as $E^3 J$, the spectrum flattens around $5\ \mathrm{EeV}$ (the ankle) and
 falls steeply above roughly $40\ \mathrm{EeV}$ (the suppression). The overall shape
-matches the ankle and suppression reported by the Auger Collaboration. Because only
-10% of the data is public, the slope above $40\ \mathrm{EeV}$ is poorly constrained:
-changing the energy threshold and bin edges shifted it by about one standard deviation.
+matches the ankle and suppression reported by the Auger Collaboration.
+Because only 10% of the data is public, the slope above $40\ \mathrm{EeV}$ is poorly
+constrained: it changed from 5.04 to 4.54 to 4.71 as I adjusted the cuts and bin edges,
+shifts of up to about one standard deviation.
 
-- $5$–$40\ \mathrm{EeV}$: $\gamma = $ GAMMA1 $\pm$ ERR1 (statistical only)
-- $40$–$150\ \mathrm{EeV}$: $\gamma = $ GAMMA2 $\pm$ ERR2 (statistical only)
+- $5$–$40\ \mathrm{EeV}$: $\gamma = 2.75 \pm 0.03$ (statistical only)
+- $40$–$150\ \mathrm{EeV}$: $\gamma = 4.71 \pm 0.57$ (statistical only)
 
 ## Limitations
 - Only 10% of the data; very few events above about $60\ \mathrm{EeV}$.
